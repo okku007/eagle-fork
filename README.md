@@ -1,64 +1,69 @@
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/daksh7011)
 
-# Eagle Crypto Suite
+# Eagle Crypto Suite (SYS.OP.VER.2.0)
 
 :star: Star this repository — it helps!
 
-[Eagle](https://daksh7011.com/eagle) is an cryptographic suite  that bundles various encryption and hashing methods 
-without database backend and minimal codebase.
+**Eagle** is a comprehensive, open-source cryptographic suite providing an array of string encoders/decoders, standard hashes, password hashing algorithms, OpenSSL encryption/decryption, and modern Libsodium secure cryptography. Designed with a sleek, cyberpunk-inspired interface, it runs completely without a database backend, keeping the application lightning fast, stateless, and minimal.
 
-[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://daksh7011.com/eagle)
+## Features
 
-# Table of contents
-* [Requirements](#requirements)
-* [Features](#features)
-* [Installation](#installation)
-* [Contribution Guide](#contribution-guide)
-* [License](#license)
-* [Links](#links)
+* **Comprehensive Crypto Toolkit**: Bindings for over dozens of algorithms including `base64`, `hex`, PHP native hashes, `bcrypt`/`argon2i(d)` password hashing, OpenSSL (`AES`/`ChaCha20`), and `Libsodium` (Generic Hash & Secretbox).
+* **Core Manager Class**: All cryptographic operations are securely managed by a single, strictly typed `CryptoManager` class ensuring safety and modularity.
+* **Cyberpunk UI/UX**: Redesigned front-end utilizing TailwindCSS and Alpine.js for a responsive, interactive, and visually striking accordion-based user experience.
+* **Composer Native**: Built using modern PHP standards, leveraging Composer for autoloading and dependency management (`vlucas/phpdotenv`).
+* **Environment Controlled**: Easy configuration via `.env` files.
 
-# Requirements
-* PHP => 7.1
-* Apache [mod_rewrite](https://httpd.apache.org/docs/current/mod/mod_rewrite.html) extension on web server
+## Requirements
 
-# Features
-* Binds hashing and string related algorithms with less than 200 lines of core class code.
-* Only one class to handle everything in project
-* Clean code with comments about almost everything
-* Useful for encryption, decryption, encoding, decoding and playing with different hashes
+* **PHP** >= 8.0
+* **Composer**
+* **PHP Extensions**: 
+  * `openssl` (Required for standard symmetric encryption)
+  * `sodium` (Highly recommended for modern cryptography modules)
+  * `mbstring`, `ctype`
 
-# Installation
-1. Clone the repository on your web-server 
-2. Modify the name of your website in [configuration](/includes/config.php) file and you are good to go. 
-``` php
-$website['name'] = '<your awsome project name>';
-```
+## Installation
 
+1. **Clone the repository** to your web server or local environment:
+   ```bash
+   git clone https://gitlab.com/daksh7011/eagle.git
+   cd eagle
+   ```
 
-# Contribution Guide
+2. **Install dependencies** using Composer:
+   ```bash
+   composer install
+   ```
+
+3. **Configure Environment Variables**:
+   Create a `.env` file in the root directory and define your application name and other configuration values:
+   ```env
+   APP_NAME="Project Eagle"
+   ```
+
+4. **Web Server Configuration**:
+   Point your web server's document root to the `public/` directory (where `index.php` resides) to ensure security and proper routing. 
+   
+   *Alternatively, if running locally, you can use the built-in PHP server:*
+   ```bash
+   cd public/
+   php -S localhost:8000
+   ```
+
+## Contribution Guide
 Please take a look at the [contributing](CONTRIBUTING.md) guidelines if you're interested in helping!
 
-# License
+## License
 The Eagle Project is licensed under the terms of the GPL Open Source license version 3 and is available for free.
 You should have received a copy of the GNU General Public License along with this program. 
 If not, see [GPL-v3](https://www.gnu.org/licenses/gpl-3.0.html)
 
-# Links
-[Website](https://gitlab.com/daksh7011/eagle)
+## Links
+[Website](https://gitlab.com/daksh7011/eagle) | [Issue Tracker](https://gitlab.com/daksh7011/eagle/issues)
 
-[Issue Tracker](https://gitlab.com/daksh7011/eagle/issues)
-
-[Say Thanks](https://saythanks.io/to/daksh7011) - It motivates me.
-
-**Thanks to**
- 
+**Thanks to:**
 * [Duck Duck Go](https://duckduckgo.com/) for not tracking me while trying to search what went wrong with my code.
-
-* [Stack Overflow](https://stackoverflow.com/) for providing such platform to help fellow developers.
-
-* [Siddhi Agrawal](https://gitlab.com/echo-siddhi) for continuous assistance when I hit my head on the wall.
-
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-oxygen.svg)](https://en.wikipedia.org/wiki/Oxygen)
+* [Stack Overflow](https://stackoverflow.com/) for providing a platform to help fellow developers.
+* [Siddhi Agrawal](https://gitlab.com/echo-siddhi) for continuous assistance.
